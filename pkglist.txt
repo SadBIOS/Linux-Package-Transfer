@@ -1,3 +1,5 @@
+# This is just a reference format not a requirement
+# Put required packages in this text file to deploy to your airgapped machine
 autoconf
 automake
 bc
