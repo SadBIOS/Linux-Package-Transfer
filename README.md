@@ -37,3 +37,27 @@ Both host and target systems must share matching **CPU architectures** and **OS 
 | `--cleanup-env` | Cleans up local temporary caches and builds | Run on any machine |
 
 ---
+
+## Workflow Examples
+
+### 1. Initial Offline Bootstrap (Dependency Resolution)
+
+Before performing advanced offline operations, the air-gapped machine needs `apt-offline` and its baseline dependencies.
+
+1. On the **online machine**, generate the bootstrap archive:
+
+   ```bash
+   ./deploy_tool.sh --prep-dep-pack
+   ```
+
+   This produces an archive named `depsys-preload-TIMESTAMP.tar.gz`.
+
+2. Transfer `depsys-preload-TIMESTAMP.tar.gz` to the **offline machine**.
+
+3. On the **offline machine**, resolve and install the bootstrap dependencies:
+
+   ```bash
+   ./deploy_tool.sh --resolve-deps depsys-preload-TIMESTAMP.tar.gz
+   ```
+
+---
