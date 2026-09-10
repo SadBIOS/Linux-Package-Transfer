@@ -61,3 +61,27 @@ Before performing advanced offline operations, the air-gapped machine needs `apt
    ```
 
 ---
+
+### 2. Custom Package Deployment
+
+To install specific packages (such as build toolchains or development libraries) on an air-gapped host:
+
+1. Create a plain text file containing your desired packages (for example, `pkglist.txt`), with one package per line or space-separated names. Comment lines starting with `#` are ignored.
+
+2. On the **online machine**, generate the package bundle:
+
+   ```bash
+   ./deploy_tool.sh --gen-pkglist pkglist.txt
+   ```
+
+   This produces an archive named `depsys-custpkg-TIMESTAMP.tar.gz`.
+
+3. Transfer `depsys-custpkg-TIMESTAMP.tar.gz` to the **offline machine**.
+
+4. On the **offline machine**, install the packages:
+
+   ```bash
+   ./deploy_tool.sh --dgst-pkglist depsys-custpkg-TIMESTAMP.tar.gz
+   ```
+
+---
