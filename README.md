@@ -85,3 +85,55 @@ To install specific packages (such as build toolchains or development libraries)
    ```
 
 ---
+
+### 3. Full System Update Workflow
+
+System upgrades on air-gapped nodes require a two-stage request and fetch cycle.
+
+#### Stage A: Refreshing APT Metadata Lists
+
+1. On the **offline machine**, generate an APT metadata update request:
+
+   ```bash
+   ./deploy_tool.sh --gen-sys-meta-req
+   ```
+
+   This produces `depsys-meta-req-TIMESTAMP.tar.gz`.
+
+2. Transfer `depsys-meta-req-TIMESTAMP.tar.gz` to the **online machine** and fetch the metadata bundle:
+
+   ```bash
+   ./deploy_tool.sh --fetch-sys-upgrd depsys-meta-req-TIMESTAMP.tar.gz
+   ```
+
+   This produces `depsys-meta-bundle-TIMESTAMP.tar.gz`.
+
+3. Transfer `depsys-meta-bundle-TIMESTAMP.tar.gz` back to the **offline machine** and digest it:
+
+   ```bash
+   ./deploy_tool.sh --dgst-sys-upgrd-arch depsys-meta-bundle-TIMESTAMP.tar.gz
+   ```
+
+#### Stage B: Performing the Upgrade
+
+1. On the updated **offline machine**, generate the system upgrade request:
+
+   ```bash
+   ./deploy_tool.sh --gen-sys-upgrd-req
+   ```
+
+   This produces `depsys-upgrd-req-TIMESTAMP.tar.gz`.
+
+2. Transfer `depsys-upgrd-req-TIMESTAMP.tar.gz` to the **online machine** and fetch the upgrades:
+
+   ```bash
+   ./deploy_tool.sh --fetch-sys-upgrd depsys-upgrd-req-TIMESTAMP.tar.gz
+   ```
+
+   This produces `depsys-final-TIMESTAMP.tar.gz`.
+
+3. Transfer `depsys-final-TIMESTAMP.tar.gz` to the **offline machine** and execute the upgrade:
+
+   ```bash
+   ./deploy_tool.sh --dgst-sys-upgrd-arch depsys-final-TIMESTAMP.tar.gz
+   ```
