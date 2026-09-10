@@ -137,3 +137,14 @@ System upgrades on air-gapped nodes require a two-stage request and fetch cycle.
    ```bash
    ./deploy_tool.sh --dgst-sys-upgrd-arch depsys-final-TIMESTAMP.tar.gz
    ```
+> [!NOTE]
+> Keeping the generated **"Tarballs"** around is recommended for completely air-gapped systems
+
+---
+
+> [!IMPORTANT]  
+> Tested and built on the following OS builds
+> * Debian 13.6 *"Trixie"*, Kernel **6.12.96+deb13-amd64**
+> * LMDE 7 *"Gigi"*, Kernel **6.12.96+deb13-amd64** (based on Debian 13.0)
+> ---
+> I plan to implement multi OS support for ```pacman``` and ```dnf``` based distributions like Fedora and Arch and full system upgrades (one major version to another) **Soon<sup>TM</sup>**
