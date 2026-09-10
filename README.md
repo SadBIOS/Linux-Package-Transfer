@@ -21,3 +21,19 @@ The tool is explicitly configured to work on Debian and Debian based systems lik
 Both host and target systems must share matching **CPU architectures** and **OS release profiles** for seamless operation.
 
 ---
+
+## Command Line Reference
+
+| Option | Purpose | Requirements / Input |
+| :--- | :--- | :--- |
+| `--prep-dep-pack` | Bundles core bootstrap tools (`apt-offline`, `gnupg`) | Run on Online machine |
+| `--resolve-deps <archive>` | Installs core bootstrap tools on offline target | Run on Offline machine with preload archive |
+| `--gen-pkglist <file>` | Creates a target package bundle based on a text list | Run on Online machine with package list file |
+| `--dgst-pkglist <archive>` | Ingests and installs target package bundle | Run on Offline machine with package archive |
+| `--gen-sys-meta-req` | Prepares an APT list update request archive | Run on Offline machine |
+| `--gen-sys-upgrd-req` | Prepares a full system upgrade request archive | Run on Offline machine |
+| `--fetch-sys-upgrd <req-archive>` | Downloads updates/packages using a request archive | Run on Online machine with request archive |
+| `--dgst-sys-upgrd-arch <bundle>` | Ingests update metadata or performs system upgrade | Run on Offline machine with fetched bundle |
+| `--cleanup-env` | Cleans up local temporary caches and builds | Run on any machine |
+
+---
