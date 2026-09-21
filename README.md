@@ -146,6 +146,7 @@ System upgrades on air-gapped nodes require a two-stage request and fetch cycle.
 > [!IMPORTANT]  
 > Tested and built on the following OS builds
 > * Debian 13.6 *"Trixie"*, Kernel **6.12.96+deb13-amd64**
+> * Debian 13.6 *"Trixie"*, Kernel **6.12.107+deb13-amd64**
 > * LMDE 7 *"Gigi"*, Kernel **6.12.96+deb13-amd64** (based on Debian 13.0)
 > ---
 > I plan to implement multi OS support for ```pacman``` and ```dnf``` based distributions like Fedora and Arch and full system upgrades (one major version to another) **Soon<sup>TM</sup>**
