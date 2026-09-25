@@ -15,8 +15,8 @@ It acts as an automated workflow bridge between online and offline machines. It 
 
 The tool is explicitly configured to work on Debian and Debian based systems like the following
 
-* **Debian<sup>®</sup> GNU/Linux** (Debian 13 Trixie or similar)
-* **Linux Mint Debian Edition** (LMDE 7 Gigi or similar)
+* **Debian<sup>®</sup> GNU/Linux<sup>®</sup>** (Debian 13 Trixie or similar)
+* **Linux Mint Debian<sup>®</sup> Edition** (LMDE 7 Gigi or similar)
 
 Both host and target systems must share matching **CPU architectures** and **OS release profiles** for seamless operation.
 
