@@ -1,4 +1,4 @@
-# Package Delivery Tool for Debian Linux Systems
+# Package Delivery Tool for Debian<sup>®</sup> GNU/Linux<sup>®</sup>
 Deploying packages to air-gapped machines is almost impossible in todays toxic cloud filled world. So I have decided to make a custom package and system update transport "wrapper" based on standard tools like `apt` and `apt-offline`.
 
 It acts as an automated workflow bridge between online and offline machines. It handles architecture profile verification, SHA-512 integrity checks, local repository index generation and dependency resolution.
@@ -15,7 +15,7 @@ It acts as an automated workflow bridge between online and offline machines. It 
 
 The tool is explicitly configured to work on Debian and Debian based systems like the following
 
-* **Debian GNU/Linux** (Debian 13 Trixie or similar)
+* **Debian<sup>®</sup> GNU/Linux** (Debian 13 Trixie or similar)
 * **Linux Mint Debian Edition** (LMDE 7 Gigi or similar)
 
 Both host and target systems must share matching **CPU architectures** and **OS release profiles** for seamless operation.
@@ -149,4 +149,4 @@ System upgrades on air-gapped nodes require a two-stage request and fetch cycle.
 > * Debian 13.6 *"Trixie"*, Kernel **6.12.107+deb13-amd64**
 > * LMDE 7 *"Gigi"*, Kernel **6.12.96+deb13-amd64** (based on Debian 13.0)
 > ---
-> I plan to implement multi OS support for ```pacman``` and ```dnf``` based distributions like Fedora and Arch and full system upgrades (one major version to another) **Soon<sup>TM</sup>**
+> I plan to implement multi OS support for ```pacman``` and ```dnf``` based distributions like Fedora and Arch and full system upgrades (one major version to another) **Soon™**
